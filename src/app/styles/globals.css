@@ -4,30 +4,29 @@
 
 @layer base {
 	body {
-		@apply base bg-white dark:bg-black text-default-color;
+		@apply base bg-white dark:bg-black text-default-color leading-7 tracking-tight;
 	}
 }
 
 @layer components {
 	/* TEXT STYLES */
 	.h1 {
-		@apply text-4xl lg:text-5xl font-bold tracking-tight;
+		@apply text-4xl lg:text-5xl font-bold;
 	}
 	.h2 {
-		@apply sm:text-3xl text-4xl font-bold tracking-tight;
+		@apply sm:text-3xl text-4xl font-bold;
 	}
 	.h3 {
-		@apply text-2xl font-medium tracking-tight;
+		@apply text-2xl font-medium;
 	}
 	.h4 {
-		@apply text-xl sm:text-lg font-normal tracking-tight;
+		@apply text-xl sm:text-lg font-normal;
 	}
-
 	.base {
 		@apply text-base;
 	}
 	.small {
-		@apply text-sm font-normal tracking-tight;
+		@apply text-sm font-normal;
 	}
 	.text-default-color {
 		@apply text-black dark:text-white;

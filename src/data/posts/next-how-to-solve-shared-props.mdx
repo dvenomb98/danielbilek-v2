@@ -5,21 +5,22 @@ date: "2023-06-30"
 summary: "A practical approach to handling common props in Next.js through global caching mechanism, thus eliminating the need for repeated API calls."
 draft: false
 tags:
-  - NextJS
+  - Next
   - Javascript
+  - Node
 ---
 
-# Solving Next.js Shared Props Challenge with Cache Solution
+### Introduction
 
 Next.js is a powerful and flexible framework for building React applications. However, one limitation it currently has is that the **getStaticProps** function, which allows you to fetch data at build time, can't be used at the app level. This means that if you want to share common props like header data, footer data, etc., you have to make separate API calls for all pages. But worry not, I have figured out a way around this limitation using a **cache solution**.
 
-## Implementing the Cache Solution
+### Implementing the Cache Solution
 
 My solution was to create a **getCachedData** function that fetches data and stores it in a cache. This cache is stored globally, allowing all pages to access the data without making additional requests. To use the cached data, I wrote a **getSharedProps** function which calls **getCachedData**, and can be used within **getStaticProps** on all pages. This means that only one request will be made, and all subsequent data for the pages will come from the cache.
 
 Here are the functions I created:
 
-```javascript
+```js
 declare global {
   // var is required for the object to exist in globalThis
   // let or const will be rejected.
@@ -62,9 +63,9 @@ export async function getCachedData<T>(
 ```
 
 
-## Creating getSharedProps 
+### Creating getSharedProps 
 
-```javascript
+```js
 export const getSharedProps = async (
   locale: string,
 ): Promise<SharedPropsType> => {
@@ -84,11 +85,11 @@ export const getSharedProps = async (
 
 
 
-## Applying solution for each page
+### Applying solution for each page
 
 Then, on each page, you can use the getStaticProps function like this:
 
-```javascript
+```js
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: { ...(await getSharedProps(locale)) },
 });

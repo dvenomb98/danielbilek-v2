@@ -1,10 +1,11 @@
-import SectionHeader from "@/components/shared/SectionHeader";
 import React, { FC, PropsWithChildren } from "react";
+import { genPageMetadata } from "@/lib/seo";
+
+export const metadata = genPageMetadata({ title: 'Blog' })
 
 const Layout: FC<PropsWithChildren> = async ({children}) => {
 	return (
 		<section className="page-container">
-          <SectionHeader title="Blog" description=""/>
           {children}
 		</section>
 	);

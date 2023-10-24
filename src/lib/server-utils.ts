@@ -1,25 +1,43 @@
-import moment from "moment"
+import { Post, allPosts } from "contentlayer/generated";
+import moment from "moment";
+import { PrevNextPost, TagStructure } from "./types/general";
 
+export const getAllVisiblePosts = async () => {
+	// sort posts by date in descending order (newest first)
+	// filter posts that are in draft
+	const filteredPosts = allPosts
+		.sort((a, b) => moment(b.date).valueOf() - moment(a.date).valueOf())
+		.filter((post) => !post.draft);
 
+	// everytag to lowercase for better matching [tag]
+	const postsWithLoweredTags = filteredPosts.map((post) => ({
+		...post,
+		tags: post.tags?.map((tag) => tag.toLowerCase()),
+	}));
 
+	return postsWithLoweredTags;
+};
 
-// export const getAllVisiblePosts = async () => {
-// 	const files = fs.readdirSync("src/data/posts");
-// 	const posts = files.map((fileName) => {
-// 		const slug = fileName.replace(".md", "");
-// 		const readFile = fs.readFileSync(`src/data/posts/${fileName}`, "utf-8");
-// 		const { data: frontmatter } = matter(readFile);
+export const generateTagStructure = (tags: string[]): TagStructure[] => {
+	return tags.reduce<TagStructure[]>((acc, tag) => {
+		const found = acc.find((t) => t.name === tag);
+		if (found) {
+			found.count++;
+		} else {
+			acc.push({ name: tag, count: 1 });
+		}
+		return acc;
+	}, []);
+};
 
-// 		return {
-// 			slug: `/blog/${slug}`,
-// 			frontmatter,
-// 		};
-// 	});
-// 	// sort posts by date in descending order (newest first)
-// 	// filter posts that are in draft
-// 	const sortedPosts = posts
-// 		.sort((a, b) => moment(b.frontmatter.date).valueOf() - moment(a.frontmatter.date).valueOf())
-// 		.filter((post) => !post.frontmatter.draft);
+export const getPrevNextPosts = (posts: Post[], slug: string): PrevNextPost => {
+	const postIndex = posts.findIndex((post) => post.url.split("/")[1] === slug);
 
-// 	return sortedPosts;
-// }
+	const prev = posts[postIndex + 1] || null;
+	const next = posts[postIndex - 1] || null;
+
+	return {
+		prev: prev ? { title: prev.title, url: prev.url } : null,
+		next: next ? { title: next.title, url: next.url } : null,
+	};
+};
