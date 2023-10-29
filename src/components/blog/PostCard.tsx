@@ -21,7 +21,7 @@ const PostCard: FC<PostCardProps> = async ({ post }) => {
 				<h3 className="h3 font-bold">{title}</h3>
 			</Link>
 			<ul className="flex gap-2">
-				{tags?.map((tag) => <li className="uppercase text-primary small">{tag}</li>)}
+				{tags?.map((tag) => <li key={tag} className="uppercase text-primary small">{tag}</li>)}
 			</ul>
 			<p className="text-gray py-2">{summary}</p>
 		</div>

@@ -52,7 +52,7 @@ const ContactForm: FC = () => {
 			<DialogContent>
 				<DialogHeader>
 					<DialogTitle>Send me a email</DialogTitle>
-					<DialogDescription>I'll write back within 5 working days at the latest</DialogDescription>
+					<DialogDescription>I will write back within 5 working days at the latest</DialogDescription>
 				</DialogHeader>
 
 				<Formik

@@ -17,7 +17,7 @@ const BlogLayout: FC<BlogLayoutProps> = async ({ uniqueTags, posts, activeTag })
 			<TagsBar tags={uniqueTags} activeTag={activeTag} />
 			<div className="flex flex-col gap-10">
 				{posts.map((post) => (
-					<Suspense fallback={<Skeleton className="h-40 w-full" />}>
+					<Suspense key={post._id} fallback={<Skeleton className="h-40 w-full" />}>
 						<PostCard key={post._id} post={post} />
 					</Suspense>
 				))}

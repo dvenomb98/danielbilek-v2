@@ -1,4 +1,5 @@
 import "./styles/globals.css";
+import React from "react"
 import { Inter } from "next/font/google";
 import AppProviders from "@/providers/AppProviders";
 import Navbar from "@/components/shared/navbar/Navbar";
