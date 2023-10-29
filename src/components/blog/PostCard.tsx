@@ -15,7 +15,7 @@ const PostCard: FC<PostCardProps> = async ({ post }) => {
 	const postUrl = `${URLS.BLOG}${url}`;
 
 	return (
-		<div className="flex flex-col w-[678.2px] sm:w-full">
+		<div className="flex flex-col w-full">
 			<p className="text-gray">{moment(date).format("DD MMMM YYYY")}</p>
 			<Link href={postUrl}>
 				<h3 className="h3 font-bold">{title}</h3>

@@ -3,8 +3,12 @@ import Logo from "../../ui/Logo";
 import DesktopNav from "./DesktopNav";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher";
 import MobileNav from "./MobileNav";
+import SearchInput from "./SearchInput";
+import { getAllVisiblePosts } from "@/lib/server-utils";
 
-const Navbar: FC = () => {
+const Navbar: FC = async () => {
+
+	const posts =await  getAllVisiblePosts()
 	return (
 		<div className="border-b border-divider">
 			<nav className="layout-container p-4 flex items-center justify-between">
@@ -12,7 +16,8 @@ const Navbar: FC = () => {
 					<Logo />
 					<DesktopNav />
 				</div>
-				<div className="flex items-center">
+				<div className="flex items-center gap-1">
+				<SearchInput posts={posts} />
 				<ThemeSwitcher />
 				<MobileNav />
 				</div>

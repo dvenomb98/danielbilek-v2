@@ -15,7 +15,7 @@ interface PostSideBarProps {
 
 const PostSidebar: FC<PostSideBarProps> = ({ post, prevNext }) => {
 	return (
-		<aside className="flex flex-col gap-5 sm:w-full sm:border-t sm:pt-5 lg:border-r border-divider lg:w-[300px] lg:pr-5 ">
+		<aside className="flex flex-col gap-5 sm:w-full sm:border-t sm:pt-5 lg:border-r border-divider lg:w-[200px] lg:min-w-[200px] lg:pr-5 ">
 			<div>
 				<p className="text-gray small">Posted by:</p>
 				<p>{post.author}</p>

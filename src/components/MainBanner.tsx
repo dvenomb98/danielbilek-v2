@@ -18,10 +18,10 @@ const MainBanner: FC = () => {
 				digital foundation for your business."
 			/>
 			<div className="flex gap-2 items-center">
-				<Button asChild className="w-40">
+				<Button asChild className="w-40" size="lg">
 					<Link href={URLS.PROJECTS}>Projects</Link>
 				</Button>
-				<Button asChild variant="outline" className="w-40">
+				<Button asChild variant="outline"  size="lg" className="w-40">
 					<Link href={URLS.CONTACT}>Contact me</Link>
 				</Button>
 			</div>

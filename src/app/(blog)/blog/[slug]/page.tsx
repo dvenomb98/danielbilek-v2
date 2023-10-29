@@ -15,35 +15,6 @@ export async function generateStaticParams() {
 	}));
 }
 
-export const generateMetadata = async ({
-	params,
-}: {
-	params: { slug: string };
-}): Promise<Metadata> => {
-	const posts = await getAllVisiblePosts();
-	const post = posts.find(({ url }) => url.split("/")[1] === params.slug);
-
-	return {
-		title: post?.title,
-		description: post?.summary,
-		keywords: post?.tags,
-		authors: [{ name: "Daniel Bílek", url: "https://danielbilek.com" }],
-		publisher: post?.author,
-		openGraph: {
-			title: post?.title,
-			description: post?.summary,
-			locale: "en",
-			type: "article",
-			publishedTime: post?.date,
-			modifiedTime: new Date().toISOString(),
-			authors: post?.author,
-		},
-		twitter: {
-			title: post?.title,
-			description: post?.summary,
-		},
-	};
-};
 
 const BlogPost: NextPage<{ params: { slug: string } }> = async ({ params }) => {
 	const posts = await getAllVisiblePosts();

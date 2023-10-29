@@ -40,10 +40,10 @@ const ThemeSwitcher: FC = () => {
   }, [])
 
 	return mounted && (
-		<div className="flex gap-1">
+		<div className="flex">
 			<DropdownMenu  >
 				<DropdownMenuTrigger asChild>
-					<Button size="sm" variant="ghost">{!!ThemeIcon && <ThemeIcon className="w-4 h-4"/>}</Button>
+					<Button variant="ghost">{!!ThemeIcon && <ThemeIcon className="w-4 h-4"/>}</Button>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent>
 					{themes.map(({value, label}) => <DropdownMenuItem role="button" onClick={() => setTheme(value)} key={value}>{label}</DropdownMenuItem>)}

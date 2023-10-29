@@ -5,6 +5,7 @@ import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/Footer";
 import { Metadata } from "next";
 import siteMetadata from "@/data/siteMetadata";
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					<main className="min-h-screen">{children}</main>
 					<Footer />
 				</AppProviders>
+				<Analytics />
 			</body>
 		</html>
 	);

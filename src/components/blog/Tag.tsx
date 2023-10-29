@@ -13,7 +13,7 @@ const Tag: FC<TagProps> = ({ name, count, activeTag }) => {
 	return (
 		<li
 			className={cn(
-				"first-letter:uppercase hover:text-default-color transition-colors ease-in-out",
+				"first-letter:uppercase hover:text-default-color transition-colors ease-in-out small underline",
 				activeTag === name ? "text-default-color" : "text-gray"
 			)}
 		>
