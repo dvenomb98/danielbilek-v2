@@ -55,5 +55,8 @@
     "@types/nodemailer": "^6.4.13",
     "nodemailer": "^6.9.7",
     "prettier": "3.0.3"
+  }, 
+  "overrides": {
+    "next-contentlayer": { "next": "14.0.0"}
   }
 }
