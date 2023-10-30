@@ -7,6 +7,7 @@ import Footer from "@/components/shared/footer/Footer";
 import { Metadata, Viewport} from "next";
 import siteMetadata from "@/data/siteMetadata";
 import { Analytics } from '@vercel/analytics/react';
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,7 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en" suppressHydrationWarning>
 			
-			<body className={inter.className}>
+			<body className={cn(inter.className, "antialiased")}>
 				<AppProviders>
 					<Navbar />
 					<main className="min-h-screen">{children}</main>
