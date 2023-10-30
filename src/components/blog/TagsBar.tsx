@@ -14,7 +14,7 @@ const TagsBar: FC<TagsBarProps> = ({ tags, activeTag }) => {
 	if (!tags.length) return null;
 
 	return (
-		<div className="sm:hidden w-[200px] min-w-[200px] flex flex-col gap-5 border-r border-divider">
+		<div className="sm:w-full sm:border-t sm:pt-10 w-[200px] min-w-[200px] flex flex-col gap-5 lg:border-r border-divider">
 			<Link href={URLS.BLOG}>
 				<p className={cn("text-small underline")}>All posts</p>
 			</Link>
@@ -25,7 +25,7 @@ const TagsBar: FC<TagsBarProps> = ({ tags, activeTag }) => {
 				))}
 			</ul>
 		</div>
-	);
+	)
 };
 
 export default TagsBar;

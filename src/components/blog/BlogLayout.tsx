@@ -13,7 +13,7 @@ interface BlogLayoutProps {
 
 const BlogLayout: FC<BlogLayoutProps> = async ({ uniqueTags, posts, activeTag }) => {
 	return (
-		<div className="flex gap-5 items-start">
+		<div className="flex sm:flex-col-reverse gap-5 items-start">
 			<TagsBar tags={uniqueTags} activeTag={activeTag} />
 			<div className="flex flex-col gap-10">
 				{posts.map((post) => (
