@@ -4,11 +4,17 @@ import { Inter } from "next/font/google";
 import AppProviders from "@/providers/AppProviders";
 import Navbar from "@/components/shared/navbar/Navbar";
 import Footer from "@/components/shared/footer/Footer";
-import { Metadata } from "next";
+import { Metadata, Viewport} from "next";
 import siteMetadata from "@/data/siteMetadata";
 import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
+	maximumScale: 1
+}
 
 export const metadata: Metadata = {
 	metadataBase: new URL(siteMetadata.siteUrl),
@@ -51,6 +57,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
+			
 			<body className={inter.className}>
 				<AppProviders>
 					<Navbar />
