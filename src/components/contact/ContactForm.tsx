@@ -7,6 +7,7 @@ import { Form, Formik } from "formik";
 import { Input } from "../ui/form/Input";
 import { useToast } from "@/hooks/useToast";
 import useFieldValidation from "@/hooks/useValidation";
+import * as yup from "yup"
 
 interface FormValues {
 	email: string;
@@ -44,12 +45,12 @@ const ContactForm: FC = () => {
 		resetForm();
 	};
 
-	const validationSchema = {
+	const validationSchema = yup.object({
 		email: yupField.email.required,
 		name: yupField.string.required,
 		subject: yupField.string.required,
 		message: yupField.string.required
-	}
+	})
 
 	return (
 		<Dialog>
