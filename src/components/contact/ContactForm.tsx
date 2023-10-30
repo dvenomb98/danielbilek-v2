@@ -6,6 +6,7 @@ import { Button } from "../ui/Button";
 import { Form, Formik } from "formik";
 import { Input } from "../ui/form/Input";
 import { useToast } from "@/hooks/useToast";
+import useFieldValidation from "@/hooks/useValidation";
 
 interface FormValues {
 	email: string;
@@ -23,7 +24,8 @@ const initialValues = {
 
 const ContactForm: FC = () => {
 	const { toast } = useToast();
-
+	const yupField = useFieldValidation()
+ 
 	const postEmail = async (values: FormValues, resetForm: () => void) => {
 		const res = await fetch("/api/post-email", { method: "POST", body: JSON.stringify(values) });
 		if (!res.ok) {
@@ -42,6 +44,13 @@ const ContactForm: FC = () => {
 		resetForm();
 	};
 
+	const validationSchema = {
+		email: yupField.email.required,
+		name: yupField.string.required,
+		subject: yupField.string.required,
+		message: yupField.string.required
+	}
+
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -57,11 +66,12 @@ const ContactForm: FC = () => {
 
 				<Formik
 					initialValues={initialValues}
+					validationSchema={validationSchema}
 					onSubmit={async (values: FormValues, { resetForm }) => await postEmail(values, resetForm)}
 				>
 					{({ isSubmitting }) => (
 						<Form className="flex flex-col gap-5">
-							<Input name="email" label="Email address*" required />
+							<Input name="email" label="Email address*" />
 							<Input name="name" label="Name*" />
 							<Input name="subject" label="Subject*" />
 							<Input name="message" label="Message*" />

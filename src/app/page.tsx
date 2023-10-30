@@ -9,7 +9,6 @@ const Home: FC = () => {
 			<MainBanner />
 			<Technologies />
 			<LastPost />
-			
 		</main>
 	);
 };

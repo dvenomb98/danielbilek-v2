@@ -11,7 +11,7 @@ import {
 import { URLS, navigationLinks } from "@/lib/consts/urls";
 
 import { Post } from "contentlayer/generated";
-import { FileIcon, Folder } from "lucide-react";
+import { FileIcon, Folder, SearchCodeIcon, SearchIcon } from "lucide-react";
 
 import { useRouter } from "next/navigation";
 import React, { FC, useEffect, useState } from "react";
@@ -46,7 +46,7 @@ const SearchInput: FC<SearchInputProps> = ({ posts }) => {
 		<>
 			<Button
 				variant="outline"
-				className="gap-4 text-gray hover:text-default-color"
+				className="gap-4 text-gray hover:text-default-color sm:hidden"
 				onClick={() => setOpen(true)}
 			>
 				<span className="small">Search...</span>
@@ -54,7 +54,14 @@ const SearchInput: FC<SearchInputProps> = ({ posts }) => {
 					<span className="text-xs">⌘</span>K
 				</kbd>
 			</Button>
-			<CommandDialog open={open} onOpenChange={setOpen}>
+			<Button
+				variant="ghost"
+				className="lg:hidden"
+				onClick={() => setOpen(true)}
+			>
+			<SearchIcon className="w-4 h-4" />
+			</Button>
+			<CommandDialog  open={open} onOpenChange={setOpen}>
 				<CommandInput placeholder="Type to search articles" />
 				<CommandList>
 					<CommandEmpty>No results found.</CommandEmpty>
