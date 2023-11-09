@@ -1,5 +1,5 @@
 import { Project } from "@/lib/types/general";
-import yat from "public/images/yat.webp";
+import yat from "public/images/yat.png";
 import regiojet from "public/images/regiojet.png";
 import gfteam from "public/images/gfteam.png";
 
@@ -31,11 +31,18 @@ export default [
 	},
 	{
 		type: "secondary",
-		title: "Online game - Yahtzee",
+		title: "Online game - Yahtzee (beta)",
 		description:
 			"Yatzhee Online Game is a web-based implementation of the classic dice game, Yatzhee, built with NextJS. This is a multiplayer game where players can compete against their friends in real time.",
-		website: "https://yahtzee-mu.vercel.app",
-		github: "https://github.com/dvenomb98/kniffel",
+		features: [
+			"Build with latest Next 14 features and Supabase",
+			"Realtime updates with Supabase to support multiplayer game",
+			"Server components and SSR Auth",
+			"Dynamic HTML Streaming",
+			"UI Built with ShadcnUI and Tailwind"
+		],
+		website: "https://kniffel-v2.vercel.app/",
+		github: "https://github.com/dvenomb98/kniffel-v2",
 		image: yat,
 	},
 ] as Project[];

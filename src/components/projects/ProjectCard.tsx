@@ -25,9 +25,9 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 				{!!features?.length && (
 					<ul className="flex flex-col">
 						{features.map((feature, index) => (
-							<li key={index} className="inline-flex gap-2 items-center">
+							<li key={index} className="inline-flex gap-2 items-center sm:items-start font-medium dark:font-normal">
 								<CheckIcon className="w-4 h-4 text-default-color sm:hidden " />
-								{feature}
+								<span className="lg:hidden">-</span>{feature}
 							</li>
 						))}
 					</ul>

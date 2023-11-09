@@ -1,8 +1,8 @@
 export default [
 	{
-		title: "Next.js 13",
+		title: "Next.js 14",
 		description:
-			"I harness the full-stack power for the frontend, ensuring state-of-the-art features and capabilities with Next.js 13.",
+			"I harness the full-stack power for the frontend, ensuring state-of-the-art features and capabilities with Next.js 14.",
 	},
 	{
 		title: "Built-in Optimizations",
