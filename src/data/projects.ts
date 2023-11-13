@@ -2,6 +2,7 @@ import { Project } from "@/lib/types/general";
 import yat from "public/images/yat.png";
 import regiojet from "public/images/regiojet.png";
 import gfteam from "public/images/gfteam.png";
+import starter from "public/images/starter.png"
 
 export default [
 	{
@@ -45,4 +46,21 @@ export default [
 		github: "https://github.com/dvenomb98/kniffel-v2",
 		image: yat,
 	},
+	{
+		type: "secondary",
+		title: "NextDevKit",
+		description: "The Ultimate NextJS Starter App for Efficient Development",
+		website: "https://next-dev-kit.vercel.app",
+		github: "https://github.com/dvenomb98/NextDevKit",
+		features: [
+			"Pre-configured with essential components and utilities",
+			"Fully functional and ready dark mode, possibility of extending it for other themes",
+			"Integrated Prettier setup for consistent code formatting",
+			"Seo configuration with zero effort",
+			"Time saving utils for daily use"
+		],
+		image: starter,
+		
+	}
+	
 ] as Project[];
