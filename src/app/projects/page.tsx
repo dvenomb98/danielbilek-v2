@@ -5,27 +5,24 @@ import projects from "@/data/projects";
 import Tabs from "@/components/ui/Tabs";
 import ProjectCard from "@/components/projects/ProjectCard";
 
-const triggers = [
+const content = projects.map((project, i) => (
 	{
-		value: "featured",
-		label: "Featured",
-	},
-	{ value: "main", label: "Main" },
-	{ value: "secondary", label: "Secondary" },
-];
+		value: i,
+		label: project.type,
+		children: (<ProjectCard key={project.title} project={project} />)
+	}
+))
+
 
 const ProjectsPage: NextPage = async () => {
-	const content = projects.map((pr) => ({
-		value: pr.type,
-		children: <ProjectCard key={pr.title} project={pr} />,
-	}));
+
 	return (
 		<>
 			<SectionHeader
 				title="Projects"
 				description="Check out the latest projects i was involved on or created by myself"
 			/>
-			<Tabs tabsTrigger={triggers} tabsContent={content} />
+			<Tabs tabsContent={content} />
 		</>
 	);
 };

@@ -7,10 +7,9 @@ export interface PrevNextPost {
 	next: { title: string; url: string } | null;
 }
 
-export type ProjectType = "main" | "featured" | "secondary"
 
 export interface Project {
-	type: ProjectType
+	type: string
 	title: string
 	description: string
 	website: string

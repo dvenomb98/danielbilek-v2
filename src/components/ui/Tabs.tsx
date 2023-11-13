@@ -3,19 +3,16 @@ import { cn } from "@/lib/utils";
 import React, { FC, Fragment, ReactNode, useMemo, useState } from "react";
 
 interface TabsProps {
-	defaultValue?: string;
-	tabsTrigger: {
-		value: string;
-		label: string;
-	}[];
+	defaultValue?: number
 	tabsContent: {
-		value: string;
+		value: number;
 		children: ReactNode;
+		label: string
 	}[];
 }
 
-const Tabs: FC<TabsProps> = ({ defaultValue, tabsTrigger, tabsContent }) => {
-	const [isActive, setIsActive] = useState<string>(defaultValue || tabsTrigger[0].value);
+const Tabs: FC<TabsProps> = ({ defaultValue, tabsContent }) => {
+	const [isActive, setIsActive] = useState<number>(defaultValue || tabsContent[0].value);
 
 	const content = useMemo(() => {
 		return tabsContent.filter((c) => c.value === isActive);
@@ -24,7 +21,7 @@ const Tabs: FC<TabsProps> = ({ defaultValue, tabsTrigger, tabsContent }) => {
 	return (
 		<div className="flex flex-col gap-5">
 			<div className="w-full border-b border-divider flex gap-2">
-				{tabsTrigger.map((tab) => (
+				{tabsContent.map((tab) => (
 					<button
 						className={cn(
 							"pb-2 sm:w-full lg:min-w-[150px] sm:small",

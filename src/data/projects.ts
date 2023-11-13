@@ -6,7 +6,7 @@ import starter from "public/images/starter.png"
 
 export default [
 	{
-		type: "featured",
+		type: "Web apps",
 		title: "Regiojet",
 		description:
 			"Currently developing new features at Regiojet. Regiojet is a Czech transport company that provides train and bus services both within the Czech Republic and across Europe. Their website is a one-stop-shop for anyone looking to purchase tickets for their own fleet of trains and buses. With a user-friendly interface, easy online booking, and competitive pricing, RegioJet is a popular choice for travelers across the continent.",
@@ -15,7 +15,7 @@ export default [
 		image: regiojet,
 	},
 	{
-		type: "main",
+		type: "Websites",
 		title: "GFTeam Brno",
 		description:
 			"The GF Team Brno BJJ website is a dedicated platform for the Brazilian Jiu-Jitsu enthusiasts of the GF Team in Brno. Leveraging the power of Next.js, this frontend project offers a seamless user experience, lightning-fast page loads, and server-side rendering capabilities, ensuring optimal performance and SEO benefits.",
@@ -31,7 +31,7 @@ export default [
 		],
 	},
 	{
-		type: "secondary",
+		type: "Games",
 		title: "Online game - Yahtzee (beta)",
 		description:
 			"Yatzhee Online Game is a web-based implementation of the classic dice game, Yatzhee, built with NextJS. This is a multiplayer game where players can compete against their friends in real time.",
@@ -47,7 +47,7 @@ export default [
 		image: yat,
 	},
 	{
-		type: "secondary",
+		type: "Starters",
 		title: "NextDevKit",
 		description: "The Ultimate NextJS Starter App for Efficient Development",
 		website: "https://next-dev-kit.vercel.app",
