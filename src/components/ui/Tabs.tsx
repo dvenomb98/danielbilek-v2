@@ -3,11 +3,11 @@ import { cn } from "@/lib/utils";
 import React, { FC, Fragment, ReactNode, useMemo, useState } from "react";
 
 interface TabsProps {
-	defaultValue?: number
+	defaultValue?: number;
 	tabsContent: {
 		value: number;
 		children: ReactNode;
-		label: string
+		label: string;
 	}[];
 }
 
