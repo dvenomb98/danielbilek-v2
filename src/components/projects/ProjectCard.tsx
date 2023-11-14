@@ -37,6 +37,7 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
 				<Image
 					alt={title}
 					src={image}
+					placeholder="blur"
 					className="w-full h-auto rounded-b-md grayscale opacity-50 hover:opacity-100 transition-opacity ease-in-out"
 					sizes="100vw"
 					quality={100}

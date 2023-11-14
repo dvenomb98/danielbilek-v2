@@ -1,5 +1,5 @@
 import { EyeIcon, GithubIcon } from "lucide-react";
-import React, { FC } from "react";
+import React, { FC, Fragment } from "react";
 import { Button } from "../ui/Button";
 
 export enum IconType {
@@ -26,7 +26,7 @@ const ProjectCardLinks: FC<ProjectCardLinksProps> = ({ linksWithIcons }) => {
 			{linksWithIcons.map(({ link, icon }) => {
 				const CorrectIcon = mapIconsToType[icon];
 				return (
-					<>
+					<Fragment key={link}>
 						{!!link ? (
 							<Button asChild variant="outline">
 								<a href={link} target="_blank">
@@ -38,7 +38,7 @@ const ProjectCardLinks: FC<ProjectCardLinksProps> = ({ linksWithIcons }) => {
 								<CorrectIcon className="w-4 h-4" />
 							</Button>
 						)}
-					</>
+					</Fragment>
 				);
 			})}
 		</div>
