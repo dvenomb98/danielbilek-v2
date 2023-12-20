@@ -11,7 +11,7 @@ const SectionHeader: FC<SectionHeaderProps> = ({ title, description, className }
 	return (
 		<div className={cn("flex flex-col gap-5", className)}>
 			<h1 className="h1">{title}</h1>
-			{!!description && <h4 className="h4 text-gray">{description}</h4>}
+			{!!description && <h4 className="h4 text-muted-foreground">{description}</h4>}
 		</div>
 	);
 };

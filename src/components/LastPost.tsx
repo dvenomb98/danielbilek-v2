@@ -7,7 +7,7 @@ const LastPost: FC = async () => {
 	const lastPost = posts[0];
 
 	return (
-		<div className="flex flex-col gap-10 border border-divider rounded-md p-10">
+		<div className="flex flex-col gap-10 border rounded-md p-10">
 			<h2 className="h2 font-bold">Latest article</h2>
 			<PostCard post={lastPost} />
 		</div>

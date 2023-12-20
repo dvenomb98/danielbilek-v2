@@ -38,7 +38,7 @@ const ContactForm: FC = () => {
 			return;
 		}
 		toast({
-			variant: "success",
+			variant: "default",
 			title: "Success!",
 			description: "Your email was successfully sended!",
 		});

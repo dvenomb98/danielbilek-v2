@@ -3,7 +3,6 @@ import { NextPage } from "next";
 import { generateTagStructure, getAllVisiblePosts } from "@/lib/server-utils";
 import BlogLayout from "@/components/blog/BlogLayout";
 import SectionHeader from "@/components/shared/SectionHeader";
-import { capitalizeFirstLetter } from "@/lib/utils";
 
 const BlogPage: NextPage = async () => {
 	const posts = await getAllVisiblePosts();

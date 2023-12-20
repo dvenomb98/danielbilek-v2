@@ -25,7 +25,7 @@ const BlogPost: NextPage<{ params: { slug: string } }> = async ({ params }) => {
 	return (
 		<div className="flex flex-col gap-5">
 			{/* HEADER */}
-			<p className="text-gray">{moment(postBySlug.date).format("dddd, MMMM D, YYYY")}</p>
+			<p className="text-muted-foreground">{moment(postBySlug.date).format("dddd, MMMM D, YYYY")}</p>
 			<SectionHeader title={postBySlug.title} description={postBySlug.summary} />
 			<hr className="border-divider" />
 

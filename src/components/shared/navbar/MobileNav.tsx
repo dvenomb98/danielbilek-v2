@@ -29,8 +29,8 @@ const MobileNav: FC = () => {
 							<Link
 								href={props.href}
 								className={cn(
-									"text-gray hover:text-default-color transition-colors ease-in-out component-focus rounded-md",
-									pathname === props.href && "text-default-color"
+									"text-muted-foreground hover:text-foreground transition-colors ease-in-out rounded-md",
+									pathname === props.href && "text-foreground"
 								)}
 							>
 								{props.label}{" "}

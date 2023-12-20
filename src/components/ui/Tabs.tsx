@@ -20,12 +20,12 @@ const Tabs: FC<TabsProps> = ({ defaultValue, tabsContent }) => {
 
 	return (
 		<div className="flex flex-col gap-5">
-			<div className="w-full border-b border-divider flex gap-2">
+			<div className="w-full border-b flex gap-2">
 				{tabsContent.map((tab) => (
 					<button
 						className={cn(
-							"pb-2 sm:w-full lg:min-w-[150px] sm:small",
-							tab.value === isActive ? "text-default-color border-b" : "text-gray"
+							"pb-2 sm:w-full lg:min-w-[150px] sm:text-sm",
+							tab.value === isActive ? "text-foreground border-b border-foreground" : "text-muted-foreground"
 						)}
 						key={tab.value}
 						onClick={() => setIsActive(tab.value)}

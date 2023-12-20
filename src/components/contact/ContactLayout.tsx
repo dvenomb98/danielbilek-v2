@@ -8,7 +8,7 @@ const ContactLayout: FC = () => {
         <ContactSidebar />
         <ul className='flex flex-col gap-5 w-full'>
             {contact.map((value, i) => (
-                <li  className="text-gray" key={i}>{value}</li>
+                <li  className="text-muted-foreground" key={i}>{value}</li>
             ))}
         </ul>
 

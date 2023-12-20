@@ -12,9 +12,9 @@ export const mdxComponents: MDXComponents = {
 	h2: ({ children }) => <h2 className="h2">{children}</h2>,
 	h3: ({ children }) => <h3 className="h3">{children}</h3>,
 	h4: ({ children }) => <h4 className="h4 font-medium">{children}</h4>,
-	p: ({ children }) => <p className="text-gray">{children}</p>,
+	p: ({ children }) => <p className="text-muted-foreground">{children}</p>,
 	strong: ({ children }) => (
-		<strong className="p-0.5 px-1 text-default-color font-normal bg-secondary-light dark:bg-secondary-dark rounded-md">
+		<strong className="p-0.5 px-1 text-foreground font-normal bg-secondary rounded-md">
 			{children}
 		</strong>
 	),

@@ -8,7 +8,7 @@ interface TextLinkProps {
 
 const TextLink: FC<TextLinkProps> = ({ href, children }) => {
 	return (
-		<Link href={href} className="underline hover:text-primary transition-colors ease-in-out">
+		<Link href={href} className="underline hover:text-primary ease-in-out transition-colors">
 			{children}
 		</Link>
 	);

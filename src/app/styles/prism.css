@@ -31,7 +31,7 @@
  pre[class*="language-"] ::-moz-selection,
  code[class*="language-"]::-moz-selection,
  code[class*="language-"] ::-moz-selection {
-     @apply bg-secondary-dark
+     @apply bg-background/80
  }
  
  pre[class*="language-"]::selection,
@@ -50,7 +50,7 @@
  
  :not(pre) > code[class*="language-"],
  pre[class*="language-"] {
-     @apply bg-secondary-extradark rounded-md border border-divider p-5
+     @apply bg-background/80 rounded-md border p-5
  }
  
  /* Inline code */

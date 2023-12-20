@@ -46,11 +46,11 @@ const SearchInput: FC<SearchInputProps> = ({ posts }) => {
 		<>
 			<Button
 				variant="outline"
-				className="gap-4 text-gray hover:text-default-color sm:hidden"
+				className="gap-4 text-muted-foreground hover:text-foreground sm:hidden"
 				onClick={() => setOpen(true)}
 			>
 				<span className="small">Search...</span>
-				<kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border border-divider px-1.5 text-[10px] sm:hidden">
+				<kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 text-[10px] sm:hidden">
 					<span className="text-xs">⌘</span>K
 				</kbd>
 			</Button>

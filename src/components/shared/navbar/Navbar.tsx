@@ -10,13 +10,13 @@ const Navbar: FC = async () => {
 
 	const posts =await  getAllVisiblePosts()
 	return (
-		<div className="border-b border-divider">
+		<div className="border-b">
 			<nav className="layout-container p-4 flex items-center justify-between">
 				<div className="flex items-center gap-10">
 					<Logo />
 					<DesktopNav />
 				</div>
-				<div className="flex items-center gap-1">
+				<div className="flex items-center gap-4">
 				<SearchInput posts={posts} />
 				<ThemeSwitcher />
 				<MobileNav />
