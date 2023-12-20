@@ -9,7 +9,7 @@ interface StyledLinkProps {
 }
 
 const StyledLink: FC<StyledLinkProps> = ({ href, label, className }) => {
-	return <Link href={href} className={cn("text-muted-foreground hover:text-foreground transition-colors ease-in-out rounded-md", className )}>{label}</Link>;
+	return <Link href={href} className={cn("text-muted-foreground hover:text-primary transition-colors ease-in-out rounded-md", className )}>{label}</Link>;
 };
 
 export default StyledLink;

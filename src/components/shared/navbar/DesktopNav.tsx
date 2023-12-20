@@ -12,7 +12,7 @@ const DesktopNav: FC = () => {
 				<li key={props.href}>
 					<StyledLink
 						{...props}
-						className={pathname === props.href ? "text-foreground text-sm" : "text-sm"}
+						className={pathname === props.href ? "text-primary text-sm" : "text-sm"}
 					/>
 				</li>
 			))}
