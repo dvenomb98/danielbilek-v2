@@ -10,3 +10,7 @@ export function capitalizeFirstLetter(string: string) {
 }
 
 
+export const wait = async (ms: number): Promise<void> =>
+  new Promise<void>((res) => setTimeout(() => res(), ms));
+
+

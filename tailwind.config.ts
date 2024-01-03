@@ -54,9 +54,7 @@ const config: Config = {
         DEFAULT: "hsl(var(--card))",
         foreground: "hsl(var(--card-foreground))",
       },
-
     },
-
     screens: {
       sm: { max: `${BREAKPOINTS.SM.MAX}px` },
       lg: `${BREAKPOINTS.LG.MIN}px`,

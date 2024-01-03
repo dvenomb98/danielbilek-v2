@@ -1,13 +1,13 @@
 import LastPost from "@/components/LastPost";
 import MainBanner from "@/components/MainBanner";
-import Technologies from "@/components/Technologies";
+import ShortsLayout from "@/components/shorts/ShortsLayout";
 import React, { FC } from "react";
 
 const Home: FC = () => {
 	return (
 		<main className="page-container">
 			<MainBanner />
-			<Technologies />
+			<ShortsLayout />
 			<LastPost />
 		</main>
 	);

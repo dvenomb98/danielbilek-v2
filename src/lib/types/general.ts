@@ -6,8 +6,6 @@ export interface PrevNextPost {
 	prev: { title: string; url: string } | null;
 	next: { title: string; url: string } | null;
 }
-
-
 export interface Project {
 	type: string
 	title: string
@@ -23,4 +21,15 @@ export enum FormStatus {
 	SUCCESS = "success",
 	ERROR = "error",
 	UNSENT = "unsent"
+}
+export interface ShortsAuthor {
+	name: string
+	image: StaticImageData
+}
+export interface Shorts {
+	image: StaticImageData
+	description: string
+	id: number
+	author: ShortsAuthor
+	date: string
 }
