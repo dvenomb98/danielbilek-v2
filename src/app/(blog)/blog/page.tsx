@@ -1,18 +1,15 @@
 import React from "react";
 import { NextPage } from "next";
-import { generateTagStructure, getAllVisiblePosts } from "@/lib/server-utils";
+import { getAllVisiblePosts, getAllUniqueTags } from "@/lib/services/contentlayer/utils";
 import BlogLayout from "@/components/blog/BlogLayout";
-import SectionHeader from "@/components/shared/SectionHeader";
+
 
 const BlogPage: NextPage = async () => {
 	const posts = await getAllVisiblePosts();
-	const tags = posts.flatMap((post) => post.tags) as string[];
-	const uniqueTags = generateTagStructure(tags);
+	const tags = await getAllUniqueTags(posts)
 
-	return <>
-		<SectionHeader title="All posts" />
-		<BlogLayout uniqueTags={uniqueTags} posts={posts} />
-		</>
+	return <BlogLayout uniqueTags={tags} posts={posts} header="All posts" />
+		
 };
 
 export default BlogPage;

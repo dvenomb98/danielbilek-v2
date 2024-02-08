@@ -1,4 +1,4 @@
-import { getAllVisiblePosts } from "@/lib/server-utils";
+import { getAllVisiblePosts } from "@/lib/services/contentlayer/utils";
 import { Metadata } from "next";
 import React, { FC, PropsWithChildren } from "react";
 

@@ -7,7 +7,7 @@ import React, { FC } from "react";
 const Footer: FC = () => {
 	return (
 		<footer className="border-t px-5 py-10">
-			<div className="layout-container flex sm:flex-col sm:items-start items-center gap-10">
+			<div className="container flex sm:flex-col sm:items-start items-center gap-10">
 				<Logo />
 				<ul className="flex gap-5 sm:gap-2 sm:flex-col w-full">
 					{navigationLinks.map((li) => (

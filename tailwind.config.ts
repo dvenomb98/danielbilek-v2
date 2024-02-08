@@ -60,6 +60,8 @@ const config: Config = {
       lg: `${BREAKPOINTS.LG.MIN}px`,
     },
     container: {
+      padding: "2rem",
+      center: true,
       screens: {
         sm: { max: `${BREAKPOINTS.SM.MAX}px` },
         lg: `${BREAKPOINTS.LG.MIN}px`,

@@ -1,6 +1,6 @@
 import { Post, allPosts } from "contentlayer/generated";
 import moment from "moment";
-import { PrevNextPost, TagStructure } from "./types/general";
+import { PrevNextPost, TagStructure } from "../../types/general"
 
 export const getAllVisiblePosts = async () => {
 	// sort posts by date in descending order (newest first)
@@ -41,3 +41,9 @@ export const getPrevNextPosts = (posts: Post[], slug: string): PrevNextPost => {
 		next: next ? { title: next.title, url: next.url } : null,
 	};
 };
+
+
+export const getAllUniqueTags = async (posts: Post[]) => {
+	const tags = posts.flatMap((post) => post.tags) as string[];
+	return generateTagStructure(tags)
+}

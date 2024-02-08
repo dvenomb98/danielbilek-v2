@@ -12,7 +12,7 @@ const PostLayout: FC<PostLayoutProps> = ({ post }) => {
 	const MDXContent = getMDXComponent(post.body.code);
 
 	return (
-		<div className="flex flex-col gap-5 w-full">
+		<div className="flex flex-col gap-5 w-full lg:col-span-2">
 			<MDXContent components={mdxComponents} />
 		</div>
 	);

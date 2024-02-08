@@ -78,7 +78,7 @@
 @layer components {
   /* FONT SIZES */
   .h1 {
-    @apply text-5xl lg:text-6xl font-bold;
+    @apply text-5xl lg:text-6xl font-bold ;
   }
   .h2 {
     @apply sm:text-3xl text-4xl font-bold;
@@ -90,12 +90,7 @@
     @apply text-xl sm:text-lg font-normal;
   }
 
-  /* LAYOUTS  */
-  .layout-container {
-    @apply container mx-auto px-5;
-  }
-
   .page-container {
-    @apply layout-container py-20 flex flex-col gap-16;
+    @apply container py-20 flex flex-col gap-16;
   }
 }
