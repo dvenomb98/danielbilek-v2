@@ -61,7 +61,7 @@
   },
   "overrides": {
     "next-contentlayer": {
-      "next": "14.0.0"
+      "next": "next"
     }
   }
 }
