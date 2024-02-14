@@ -30,7 +30,7 @@ const SelectInput: FC<SelectInputProps> = ({ name, options, placeholder, label }
 
   return (
     <InputWrapper>
-      <div className="flex flex-col space-y-1">
+      <div className="flex flex-col space-y-1 w-full">
         {!!label && <FormLabel label={label} />}
         <Select
           onValueChange={(e) => setFieldValue(name, e)}

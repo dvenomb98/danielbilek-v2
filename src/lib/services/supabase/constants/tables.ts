@@ -1,3 +1,3 @@
 export enum TablePaths {
-    SHORTS = "shorts"
+    TASKS = "tasks"
 }

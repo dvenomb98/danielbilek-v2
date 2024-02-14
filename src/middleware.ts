@@ -1,32 +1,34 @@
-
 import { NextRequest, NextResponse } from "next/server";
-import { v4 as uuidv4 } from 'uuid';
+import { PROTECTED_URLS, URLS } from "./lib/consts/urls";
+import { createClient } from "./lib/services/supabase/client/middleware-client";
 
-export function middleware(request: NextRequest) {
-  
-    const sessionId = request.cookies.get("sessionId")
-    const response = NextResponse.next()
+export async function middleware(request: NextRequest) {
+  const { response, supabase } = createClient(request);
 
-    if (!sessionId) {
-      response.cookies.set("sessionId", uuidv4() , {
-        // Cookie expiration date - one year 
-        maxAge: 60 * 60 * 24 * 365,
-      });
-      return response;
-    }
-  
-    return response;
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
+
+  if (session && request.nextUrl.pathname.startsWith(PROTECTED_URLS.LOGIN)) {
+    return NextResponse.redirect(new URL(PROTECTED_URLS.DASHBOARD, request.url));
   }
-  
-  export const config = {
-    matcher: [
-      /*
-       * Match all request paths except for the ones starting with:
-       * - api (API routes)
-       * - _next/static (static files)
-       * - _next/image (image optimization files)
-       * - favicon.ico (favicon file)
-       */
-      '/((?!api|_next/static|_next/image|favicon.ico).*)',
-    ],
-  };
+
+  if (!session && request.nextUrl.pathname.startsWith(PROTECTED_URLS.DASHBOARD)) {
+    return NextResponse.redirect(new URL(PROTECTED_URLS.LOGIN, request.url));
+  }
+
+  return response;
+}
+
+export const config = {
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+  ],
+};
