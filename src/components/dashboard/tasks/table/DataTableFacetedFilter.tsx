@@ -9,7 +9,7 @@ import {
   CommandSeparator,
 } from "@/components/ui/Command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/Popover";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
 import { Column } from "@tanstack/react-table";
 import { CheckIcon, PlusCircleIcon } from "lucide-react";
